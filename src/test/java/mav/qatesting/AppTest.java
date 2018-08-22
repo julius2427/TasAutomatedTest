@@ -22,13 +22,15 @@ public class AppTest extends AbstractSteps
 		public void test1() throws Exception
 	    {
 			//Set X Y and Size Information
-			Canvas_Object obj1 = new Canvas_Object(200,100,40);
+			Canvas_Object.set_action_counter(driver);
+			Canvas_Object obj1 = new Canvas_Object(200,100,40, "Grey");
 			Canvas_Object.set_canvas(driver, obj1);
+//			Canvas_Object.clearoption(driver);
 	    }
 
-	@After
-		public void closeapp() {
-			driver.quit();
-		}
-	
+//	@After
+//		public void closeapp() {
+//			driver.quit();
+//		}
+//	
 }
