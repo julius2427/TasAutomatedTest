@@ -14,20 +14,23 @@ import commonfunctions.AbstractSteps;
  */
 public class AppTest extends AbstractSteps
 {
-	WebDriver driver = getDriver();
-	private int initial_counter;
 
 	@Before
 		public void openapp() throws Exception {
 			//Open the page
-			driver.navigate().to("http://localhost:4567/canvas_basic.html");
-			Canvas_Object.set_action_counter(driver);
-			initial_counter = Canvas_Object.get_action_counter();
+
 		}
 	
 	@Test
 		public void test1() throws Exception
 	    {
+			WebDriver driver = getDriver();
+			int initial_counter;
+
+			driver.navigate().to("http://localhost:4567/canvas_basic.html");
+			Canvas_Object.set_action_counter(driver);
+			initial_counter = Canvas_Object.get_action_counter();
+		
 			//Set X Y and Size Information
 			//Initial Count of Events
 			
@@ -50,6 +53,10 @@ public class AppTest extends AbstractSteps
 			//Clears the options 
 			//Canvas_Object.clearoption(driver);
 	    }
+	@Test
+		public void api_testing() throws Exception {
+		RestTesting.basicpingtest();
+	}
 
 //	@After
 //		public void closeapp() {
